@@ -18,7 +18,7 @@ import cucumber.api.junit.Cucumber;
 		//"json:Report\\JSON-Report\\cucumber-trends.json",
 		"junit:Report\\XML-Report\\cucumber.xml",
 		"com.cucumber.listener.ExtentCucumberFormatter:Report\\Extend-Report\\cucumber.html"},
-		//plugin = { "pretty","com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
+		//plugin = { "pretty","com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"}, ss
 		dryRun= false,
 		monochrome=true,
 		strict=true,
