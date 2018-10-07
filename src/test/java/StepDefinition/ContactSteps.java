@@ -33,6 +33,7 @@ public class ContactSteps extends TestBase{
 		getContactpage().fillContactDetails(first, last, nick, pos,dept);	
 		driver.switchTo().parentFrame();
 	}
+	
 	@Then("^user click save button$")
 	public void user_click_save_button()  {
 		driver.switchTo().frame("mainpanel");
@@ -43,11 +44,11 @@ public class ContactSteps extends TestBase{
 	//Scenario Outline: Search Contacts	
 	@Then("^User enters search \"([^\"]*)\" in the search box and click Search button$")
 	public void user_enters_search_in_the_search_box_and_click_Search_button(String key) throws IOException {	    
-		driver.switchTo().frame("mainpanel");
-		
+		driver.switchTo().frame("mainpanel");		
 		getMyaccount().typeSearchAndClick(key);
 		driver.switchTo().parentFrame();
 		Reporter.addScreenCaptureFromPath("D:\\Workspace\\CucumberDemo\\Report\\Screenshots\\Homepage.jpg");
+		
 		//need to uncomment for failed steps
 		assertEquals(false, true);
 	}

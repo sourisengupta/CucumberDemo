@@ -17,9 +17,6 @@ import pages.MyAccount;
 import testBase.TestBase;
 
 public class DealSteps extends TestBase{
-//	HomePage homepage = new HomePage();
-//	MyAccount myaccount ;
-	
 
 	@Then("^user enters Deal details \"([^\"]*)\" \"([^\"]*)\"$")
 	public void user_enters_Deal_details(String title, String amount) throws Throwable {
@@ -28,6 +25,7 @@ public class DealSteps extends TestBase{
 		getDealpage().fillupDealsDetails(title, amount);	
 		driver.switchTo().parentFrame();	    
 	}
+	
 	@Then("^user click save button in deal page$")
 	public void user_click_save_button_in_deal_page() throws Throwable {
 		driver.switchTo().frame("mainpanel");

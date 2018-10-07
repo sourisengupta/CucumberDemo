@@ -15,8 +15,7 @@ import pages.MyAccount;
 import testBase.TestBase;
 
 
-public class MyAccountSteps extends TestBase{
-	
+public class MyAccountSteps extends TestBase{	
 	
 	@Then("^user is on My Account page$")
 	public void user_is_on_My_Account_page() throws InterruptedException  {
@@ -24,6 +23,7 @@ public class MyAccountSteps extends TestBase{
 		getMyaccount().validateMyAccountPage();
 		driver.switchTo().parentFrame();
 	}
+	
 	@Then("^user click on New Contact link$")
 	public ContactsPage user_click_on_New_Contact_link()  {		
 		driver.switchTo().frame("mainpanel");
@@ -31,6 +31,7 @@ public class MyAccountSteps extends TestBase{
 	    driver.switchTo().parentFrame();
 	    return new ContactsPage();
 	}
+	
 	@Then("^user click on New Deal link$")
 	public DealsPage user_click_on_New_Deal_link() throws Throwable {
 		driver.switchTo().frame("mainpanel");
@@ -38,6 +39,7 @@ public class MyAccountSteps extends TestBase{
 	    driver.switchTo().parentFrame();
 	    return new DealsPage();
 	}
+	
 	@Then("^click Search button$")
 	public void click_Search_button()  {	    
 		driver.switchTo().frame("mainpanel");
