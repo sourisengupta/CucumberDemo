@@ -31,7 +31,6 @@ public class HomePage extends TestBase{
 		return crmlogo.isDisplayed();
 	}
 	public MyAccount loginCRM(String user, String pass) {
-		System.out.println("USername:"+user);
 		username.sendKeys(user);
 		password.sendKeys(pass);
 		loginBtn.click();

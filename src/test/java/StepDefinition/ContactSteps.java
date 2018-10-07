@@ -1,29 +1,26 @@
 package StepDefinition;
 
 import static org.junit.Assert.assertEquals;
-
 import java.io.IOException;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.testng.annotations.BeforeTest;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 import com.cucumber.listener.Reporter;
 
+import cucumber.api.Scenario;
 import cucumber.api.java.After;
-import cucumber.api.java.Before;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import pages.ContactsPage;
-import pages.HomePage;
-import pages.MyAccount;
 import testBase.TestBase;
 
 public class ContactSteps extends TestBase{
 	
-	
+	@After
+	public void clean(Scenario scenario) {		
+		if(scenario.isFailed()) {
+			scenario.embed(((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES), "image/png");
+		}
+	}
 	
 	@Then("^user enters contact details \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
 	public void user_enters_contact_details(String first, String last, String nick, String pos, String dept) throws IOException  {
@@ -31,7 +28,7 @@ public class ContactSteps extends TestBase{
 		
 		driver.switchTo().frame("mainpanel");
 		getContactpage().fillContactDetails(first, last, nick, pos,dept);	
-		driver.switchTo().parentFrame();
+		driver.switchTo().parentFrame();		
 	}
 	
 	@Then("^user click save button$")
@@ -47,14 +44,11 @@ public class ContactSteps extends TestBase{
 		driver.switchTo().frame("mainpanel");		
 		getMyaccount().typeSearchAndClick(key);
 		driver.switchTo().parentFrame();
-		Reporter.addScreenCaptureFromPath("D:\\Workspace\\CucumberDemo\\Report\\Screenshots\\Homepage.jpg");
+		//Reporter.addScreenCaptureFromPath("D:\\Workspace\\CucumberDemo\\Report\\Screenshots\\Homepage.jpg");
 		
 		//need to uncomment for failed steps
 		assertEquals(false, true);
+		
 	}
-	
-
-	
-	
 }
 

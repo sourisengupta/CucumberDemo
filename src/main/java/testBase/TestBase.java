@@ -3,18 +3,15 @@ package testBase;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
+import cucumber.api.Scenario;
 import pages.ContactsPage;
 import pages.DealsPage;
 import pages.HomePage;
@@ -29,7 +26,7 @@ public class TestBase {
 	MyAccount myaccount ;
 	ContactsPage contactpage;
 	DealsPage dealpage;
-	
+
 	public DealsPage getDealpage() {
 		if(null==dealpage) {
 			dealpage=new DealsPage();

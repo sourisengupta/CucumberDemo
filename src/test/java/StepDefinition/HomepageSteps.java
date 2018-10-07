@@ -7,11 +7,14 @@ import java.net.MalformedURLException;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import com.cucumber.listener.Reporter;
 
+import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -30,6 +33,8 @@ public class HomepageSteps extends TestBase{
 	}
 	@After
 	public void closeApp() {
+		
+		
 		closeApplication();
 	}
 	
