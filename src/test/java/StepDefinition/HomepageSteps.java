@@ -33,8 +33,6 @@ public class HomepageSteps extends TestBase{
 	}
 	@After
 	public void closeApp() {
-		
-		
 		closeApplication();
 	}
 	

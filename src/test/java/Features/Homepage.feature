@@ -1,5 +1,6 @@
 Feature: Login functionality
 
+@RegressionTest
 Scenario Outline: User login with successful credentials
 
 Given User is on home page
