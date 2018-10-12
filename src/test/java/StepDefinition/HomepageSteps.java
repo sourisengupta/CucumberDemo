@@ -45,6 +45,7 @@ public class HomepageSteps extends TestBase{
 	}
 	
 	@When("^User enters \"([^\"]*)\" and \"([^\"]*)\" and click login button$")
+	//@When("^User enters <\"([^\"]*)\"> and <\"([^\"]*)\"> and click login button$")
 	public void user_enters_and_and_click_login_button(String user, String pass)  {			
 		getHomepage().loginCRM(user,pass);		
 	}
