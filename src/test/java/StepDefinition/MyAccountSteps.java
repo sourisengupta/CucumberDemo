@@ -41,7 +41,7 @@ public class MyAccountSteps extends TestBase{
 	}
 	
 	@Then("^click Search button$")
-	public void click_Search_button()  {	    
+	public void click_Search_button() throws InterruptedException  {	    
 		driver.switchTo().frame("mainpanel");
 		getMyaccount().clickSearch();
 		driver.switchTo().parentFrame();

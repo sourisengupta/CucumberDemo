@@ -56,16 +56,19 @@ public class MyAccount extends TestBase{
 	public boolean verifyCorrectUsername() {
 		return userNameLable.isDisplayed();
 	}
-	public ContactsPage clickContactstab() {
+	public ContactsPage clickContactstab() throws InterruptedException {
+		highlightElement(contactsLink);
 		contactsLink.click();
 		return new ContactsPage();
 	}
-	public DealsPage clickDealstab() {
+	public DealsPage clickDealstab() throws InterruptedException {
+		highlightElement(dealsLnk);
 		dealsLnk.click();
 		return new DealsPage();
 	}
-	public TasksPage clickTaskstab() {
-		dealsLnk.click();
+	public TasksPage clickTaskstab() throws InterruptedException {
+		highlightElement(newTaskLnk);
+		newTaskLnk.click();
 		return new TasksPage();
 	}
 	public void validateMyAccountPage() {
@@ -83,12 +86,14 @@ public class MyAccount extends TestBase{
 		newDealLnk.click();
 		return new DealsPage();
 	}
-	public void typeSearchAndClick(String searchString) {
+	public void typeSearchAndClick(String searchString) throws InterruptedException {
+		highlightElement(txtSearch);
 		txtSearch.clear();
 		txtSearch.sendKeys(searchString);
 		btnSearch.click();
 	}
-	public void clickSearch() {
+	public void clickSearch() throws InterruptedException {
+		highlightElement(btnSearch);
 		btnSearch.click();
 	}
 	
