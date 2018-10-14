@@ -75,9 +75,11 @@ public class TestBase {
 	
 	public void highlightElement(WebElement element) throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].style.border='5px solid DarkOrange'", element);
+		//js.executeScript("arguments[0].style.boder='5px solid DarkOrange'", element);
+		js.executeScript("arguments[0].style.backgroundColor='green'", element);
 		Thread.sleep(200);
-		js.executeScript("arguments[0].style.border=''",element);
+		//js.executeScript("arguments[0].style.border=''",element);
+		js.executeScript("arguments[0].style.backgroundColor=''",element);
 	}
 
 	public TestBase() {
