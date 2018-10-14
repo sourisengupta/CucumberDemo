@@ -6,9 +6,11 @@ import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.Scenario;
@@ -69,6 +71,13 @@ public class TestBase {
 
 	protected void setHomepage(HomePage homepage) {
 		this.homepage = homepage;
+	}
+	
+	public void highlightElement(WebElement element) throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].style.border='5px solid DarkOrange'", element);
+		Thread.sleep(200);
+		js.executeScript("arguments[0].style.border=''",element);
 	}
 
 	public TestBase() {

@@ -30,9 +30,12 @@ public class HomePage extends TestBase{
 	public boolean validateCRMLogo() {
 		return crmlogo.isDisplayed();
 	}
-	public MyAccount loginCRM(String user, String pass) {
+	public MyAccount loginCRM(String user, String pass) throws InterruptedException {
+		highlightElement(username);
 		username.sendKeys(user);
+		highlightElement(password);
 		password.sendKeys(pass);
+		highlightElement(loginBtn);
 		loginBtn.click();
 		return new MyAccount();
 	}

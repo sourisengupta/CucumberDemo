@@ -23,7 +23,7 @@ public class ContactSteps extends TestBase{
 	}
 	
 	@Then("^user enters contact details \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
-	public void user_enters_contact_details(String first, String last, String nick, String pos, String dept) throws IOException  {
+	public void user_enters_contact_details(String first, String last, String nick, String pos, String dept) throws IOException, InterruptedException  {
 		Reporter.addScenarioLog("This is a test for Creating contacts");
 		
 		driver.switchTo().frame("mainpanel");
@@ -32,7 +32,7 @@ public class ContactSteps extends TestBase{
 	}
 	
 	@Then("^user click save button$")
-	public void user_click_save_button()  {
+	public void user_click_save_button() throws InterruptedException  {
 		driver.switchTo().frame("mainpanel");
 		getContactpage().clickSave();
 		driver.switchTo().parentFrame();
@@ -47,7 +47,7 @@ public class ContactSteps extends TestBase{
 		//Reporter.addScreenCaptureFromPath("D:\\Workspace\\CucumberDemo\\Report\\Screenshots\\Homepage.jpg");
 		
 		//need to uncomment for failed steps
-		assertEquals(false, true);
+		//assertEquals(false, true);
 		
 	}
 }

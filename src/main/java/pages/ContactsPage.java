@@ -27,41 +27,43 @@ public class ContactsPage extends TestBase{
 	public ContactsPage() {
 		PageFactory.initElements(driver,this);
 	}		
-	public void typeFirstName(String firstname) {
+	public void typeFirstName(String firstname) throws InterruptedException {
+		highlightElement(firstName);
 		firstName.clear();
 		firstName.sendKeys(firstname);
 	}
-	public void typeSurName(String surname) {
+	public void typeSurName(String surname) throws InterruptedException {
+		highlightElement(surName);
 		surName.clear();
 		surName.sendKeys(surname);
 	}
-	public void typeNickName(String nickname) {
+	public void typeNickName(String nickname) throws InterruptedException {
+		highlightElement(nickName);
 		nickName.clear();
 		nickName.sendKeys(nickname);
 	}
-	public void typePosition(String pos) {
+	public void typePosition(String pos) throws InterruptedException {
+		highlightElement(position);
 		position.clear();
 		position.sendKeys(pos);
 	}
-	public void typeDepartment(String dept) {
-		position.clear();
-		position.sendKeys(dept);
+	public void typeDepartment(String dept) throws InterruptedException {
+		highlightElement(department);
+		department.clear();
+		department.sendKeys(dept);
 	}
-	public void clickSave() {
+	public void clickSave() throws InterruptedException {
+		highlightElement(btnSave);
 		//txtSearch.sendKeys("Hello world");
 		btnSave.click();
 	}
-	public void fillContactDetails(String first, String last, String nick, String pos, String dept) {		
-		firstName.clear();
-		firstName.sendKeys(first);
-		surName.clear();
-		surName.sendKeys(last);
-		nickName.clear();
-		nickName.sendKeys(nick);
-		position.clear();
-		position.sendKeys(pos);
-		position.clear();
-		position.sendKeys(dept);
+	public void fillContactDetails(String first, String last, String nick, String pos, String dept) throws InterruptedException {		
+		typeFirstName(first);
+		typeSurName(last);
+		typeNickName(nick);
+		typePosition(pos);
+		typeDepartment(dept);
+		
 	}
 	
 }

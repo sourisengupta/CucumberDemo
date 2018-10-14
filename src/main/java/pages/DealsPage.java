@@ -25,14 +25,16 @@ public class DealsPage extends TestBase{
 		PageFactory.initElements(driver,this);
 	}	
 	
-	public void fillupDealsDetails(String title, String amount) {
+	public void fillupDealsDetails(String title, String amount) throws InterruptedException {
+		highlightElement(txtTitle);
 		txtTitle.clear();
 		txtTitle.sendKeys(title);
+		highlightElement(txtAmount);
 		txtAmount.clear();
 		txtAmount.sendKeys(amount);		
 	}
-	public void clickSave() {
-		//txtSearch.sendKeys("Hello world");
+	public void clickSave() throws InterruptedException {
+		highlightElement(btnSave);
 		btnSave.click();
 	}
 	
