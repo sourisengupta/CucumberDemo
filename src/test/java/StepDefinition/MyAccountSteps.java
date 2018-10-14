@@ -1,17 +1,8 @@
 package StepDefinition;
 
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
-
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import pages.ContactsPage;
 import pages.DealsPage;
-import pages.MyAccount;
 import testBase.TestBase;
 
 
