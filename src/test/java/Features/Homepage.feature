@@ -1,3 +1,4 @@
+@CoreFeature
 Feature: Login functionality
 
 @RegressionTest

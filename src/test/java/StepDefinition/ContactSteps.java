@@ -5,22 +5,20 @@ import java.io.IOException;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 import com.cucumber.listener.Reporter;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
+import cucumber.api.java.cs.A;
+import cucumber.api.java.de.Aber;
 import cucumber.api.java.en.Then;
 import testBase.TestBase;
 
 public class ContactSteps extends TestBase{
 	
-	@After
-	public void clean(Scenario scenario) {		
-		if(scenario.isFailed()) {
-			scenario.embed(((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES), "image/png");
-		}
-	}
 	
 	@Then("^user enters contact details \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
 	public void user_enters_contact_details(String first, String last, String nick, String pos, String dept) throws IOException, InterruptedException  {
@@ -47,7 +45,7 @@ public class ContactSteps extends TestBase{
 		//Reporter.addScreenCaptureFromPath("D:\\Workspace\\CucumberDemo\\Report\\Screenshots\\Homepage.jpg");
 		
 		//need to uncomment for failed steps
-		//assertEquals(false, true);
+		assertEquals(false, true);
 		
 	}
 }
