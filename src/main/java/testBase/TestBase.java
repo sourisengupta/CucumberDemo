@@ -24,6 +24,7 @@ public class TestBase {
 	public static WebDriver driver;
 	public static AppProperties property;
 	private static String url, currentBrowser;	
+	
 	HomePage homepage;	
 	MyAccount myaccount ;
 	ContactsPage contactpage;
@@ -121,7 +122,7 @@ public class TestBase {
 	public static void captureScreenshot(String screenshotname) throws IOException {
 		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
-			FileUtils.copyFile(screenshotFile, new File("D:\\Workspace\\CucumberDemo\\Report\\Screenshots\\"+screenshotname+".jpg"));
+			FileUtils.copyFile(screenshotFile, new File(System.getProperty("user.dir")+"\\Report\\Screenshots\\"+screenshotname+".jpg"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
