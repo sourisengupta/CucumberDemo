@@ -86,7 +86,7 @@
 
 	</dependencies>
 	<build>
-		<testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
+		<!-- <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory> -->
 		<plugins>
 			<!-- Compiler plugin configures the java version to be usedfor compiling 
 				the code -->
