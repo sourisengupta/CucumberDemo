@@ -5,8 +5,6 @@ import java.io.IOException;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
 
 import com.cucumber.listener.Reporter;
 
@@ -37,16 +35,16 @@ public class ContactSteps extends TestBase{
 	}	
 	
 	//Scenario Outline: Search Contacts	
-//	@Then("^User enters search \"([^\"]*)\" in the search box and click Search button$")
-//	public void user_enters_search_in_the_search_box_and_click_Search_button(String key) throws IOException, InterruptedException {	    
-//		driver.switchTo().frame("mainpanel");		
-//		getMyaccount().typeSearchAndClick(key);
-//		driver.switchTo().parentFrame();
-//		//Reporter.addScreenCaptureFromPath("D:\\Workspace\\CucumberDemo\\Report\\Screenshots\\Homepage.jpg");
-//		
-//		//need to uncomment for failed steps
-//		assertEquals(false, true);
-//		
-//	}
+	@Then("^User enters search \"([^\"]*)\" in the search box and click Search button$")
+ 	public void user_enters_search_in_the_search_box_and_click_Search_button(String key) throws IOException, InterruptedException {	    
+ 		driver.switchTo().frame("mainpanel");		
+ 		getMyaccount().typeSearchAndClick(key);
+ 		driver.switchTo().parentFrame();
+ 		//Reporter.addScreenCaptureFromPath("D:\\Workspace\\CucumberDemo\\Report\\Screenshots\\Homepage.jpg");
+ 		
+ 		//need to uncomment for failed steps
+ 		assertEquals(false, true);
+ 		
+ 	}
 }
 
